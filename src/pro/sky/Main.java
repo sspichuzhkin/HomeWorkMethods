@@ -9,16 +9,16 @@ public class Main {
         task3(95);
     }
 
-    public static void task1(int year) {
+    private static void task1(int year) {
         boolean leapYear = checkYearForLeap(year);
         printCheckYearForLeapResult(year, leapYear);
     }
 
-    public static boolean checkYearForLeap(int year) {
+    private static boolean checkYearForLeap(int year) {
         return (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0);
     }
 
-    public static void printCheckYearForLeapResult(int year, boolean leapYear) {
+    private static void printCheckYearForLeapResult(int year, boolean leapYear) {
         if (leapYear) {
             System.out.println(year + " год является високосным");
         } else {
@@ -26,7 +26,7 @@ public class Main {
         }
     }
 
-    public static void task2(int deviceOS, int deviceYear) {
+    private static void task2(int deviceOS, int deviceYear) {
         boolean checkIsDeviceOldResult = checkIsDeviceOld(deviceYear);
         if (checkIsDeviceOldResult) {
             printInstallationMessageForOld(deviceOS);
@@ -35,11 +35,11 @@ public class Main {
         }
     }
 
-    public static boolean checkIsDeviceOld(int deviceYear) {
+    private static boolean checkIsDeviceOld(int deviceYear) {
         return (deviceYear < LocalDate.now().getYear());
     }
 
-    public static void printInstallationMessageForOld(int deviceOS) {
+    private static void printInstallationMessageForOld(int deviceOS) {
         if (deviceOS == 0) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         } else if (deviceOS == 1) {
@@ -49,7 +49,7 @@ public class Main {
         }
     }
 
-    public static void printInstallationMessageForFresh(int deviceOS) {
+    private static void printInstallationMessageForFresh(int deviceOS) {
         if (deviceOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
         } else if (deviceOS == 1) {
@@ -59,11 +59,11 @@ public class Main {
         }
     }
 
-    public static void task3(int deliveryDistance) {
+    private static void task3(int deliveryDistance) {
         calculateDeliveryTime(deliveryDistance);
     }
 
-    public static void calculateDeliveryTime(int deliveryDistance) {
+    private static void calculateDeliveryTime(int deliveryDistance) {
         int deliveryTime = 1;
         if (deliveryDistance <= 20) {
             System.out.println("Потребуется дней: " + deliveryTime);
